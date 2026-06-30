@@ -1,0 +1,92 @@
+{
+  "project_name": "Cristiano Penido - Author Portfolio",
+  "theme": "Light",
+  "archetype": "5 (Luxury) - Editorial & Bookish Variant",
+  "visual_mood": "Professional, timeless, tactile, like a high-end literary magazine. Emphasis on negative space, striking typography, and structural lines.",
+  "typography": {
+    "fonts": [
+      {
+        "name": "Cormorant Garamond",
+        "type": "Headings",
+        "css_class": "font-serif",
+        "import_rule": "@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap');"
+      },
+      {
+        "name": "Newsreader",
+        "type": "Body",
+        "css_class": "font-serif",
+        "import_rule": "@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');"
+      }
+    ],
+    "rules": {
+      "h1": "text-5xl md:text-7xl font-light tracking-tighter leading-[1.1] text-stone-900 font-['Cormorant_Garamond']",
+      "h2": "text-4xl md:text-5xl font-light tracking-tight leading-tight text-stone-900 font-['Cormorant_Garamond']",
+      "h3": "text-2xl md:text-3xl font-medium tracking-tight text-stone-800 font-['Cormorant_Garamond']",
+      "body": "text-lg md:text-xl font-light leading-relaxed text-stone-700 font-['Newsreader']",
+      "overline": "text-xs md:text-sm uppercase tracking-[0.2em] font-medium text-[#800020] font-['Newsreader']"
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#FDFBF7",
+      "secondary": "#F4F1EA",
+      "tertiary": "#EBE7DF"
+    },
+    "text": {
+      "primary": "#1C1917",
+      "secondary": "#44403C",
+      "muted": "#78716C"
+    },
+    "accent": {
+      "burgundy": "#800020",
+      "burgundy_light": "#9B1B30",
+      "gold_subtle": "#D4AF37"
+    },
+    "border": {
+      "subtle": "#E7E5E4",
+      "strong": "#D6D3D1"
+    }
+  },
+  "layout": {
+    "spacing_system": "Generous. Use p-12, p-24, gap-12, gap-24. Allow content to breathe like a printed page.",
+    "grid_mode": "Editorial Asymmetry. Avoid perfectly balanced columns. Mix col-span-4 with col-span-8 in a 12-column grid.",
+    "borders": "Use 1px solid #E7E5E4 (stone-200) borders to separate sections horizontally, mimicking newspaper/editorial dividing lines."
+  },
+  "components": {
+    "navigation": {
+      "style": "Solid Minimalist. Sticky top. bg-[#FDFBF7] with subtle border-b border-stone-200.",
+      "links": "Hover effects change text to Burgundy. Minimalist, text-sm uppercase tracking-widest for links."
+    },
+    "hero_section": {
+      "layout": "Grid split: Left side huge typography ('Cristiano Penido', 'Escritor & Romancista' and Bio), Right side elegant placeholder for author photo.",
+      "author_placeholder": "aspect-[3/4] bg-[#F4F1EA] border border-stone-300 flex items-center justify-center p-8 text-stone-500 font-['Cormorant_Garamond'] italic text-2xl shadow-[inset_0_0_40px_rgba(0,0,0,0.02)]"
+    },
+    "book_placeholder_card": {
+      "structure": "aspect-[2/3] relative group overflow-hidden bg-[#F4F1EA] border border-stone-200 shadow-[inset_0_0_20px_rgba(0,0,0,0.03)] flex flex-col items-center justify-center p-8 text-center transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-[#800020]/30",
+      "typography": "Title in Cormorant Garamond, subtle subtitle. Deep burgundy color for the title to simulate foil stamping.",
+      "no_image_rule": "Strictly NO dummy images. Use pure CSS/Tailwind typography for the cover."
+    },
+    "contact_section": {
+      "layout": "Minimalist center-aligned or striking asymmetric.",
+      "email_display": "Huge text (text-4xl md:text-6xl) in Cormorant Garamond text-stone-900.",
+      "copy_button": "Subtle outline button or text link with icon. On hover, text turns burgundy."
+    }
+  },
+  "animations": {
+    "hover_states": "Soft, slow transitions. duration-500 ease-out.",
+    "scroll_reveal": "Fade in and slight upward translation (translate-y-4 to 0) on scroll using framer-motion."
+  },
+  "testing": {
+    "attributes": "ALL interactive elements (buttons, links, copy email button) MUST include data-testid. Examples: data-testid='nav-home-link', data-testid='copy-email-button', data-testid='book-card-amazon-link'."
+  },
+  "instructions_to_main_agent": [
+    "This is a JavaScript (.js) React project using Tailwind CSS. Do not use TypeScript.",
+    "Embed Google Fonts directly in src/index.css using the provided @import rules.",
+    "Configure Tailwind (tailwind.config.js) to extend colors with the provided hex codes and add 'Cormorant_Garamond' and 'Newsreader' to the font family.",
+    "Do not use generic Shadcn card components if they look too tech-focused. Build custom HTML/Tailwind editorial components using the layout rules.",
+    "For the book covers and author photo, strictly use HTML/CSS placeholders as defined in book_placeholder_card. Do NOT use unsplash or dummyimage URLs. The user explicitly requested elegant beige/ivory placeholders with serif typography.",
+    "Implement the layout with high asymmetry and prominent typographic scale. Let the words act as the primary visual art.",
+    "Ensure all text/copy is in Portuguese (Brazilian).",
+    "Use lucide-react for minimal icons (e.g., Copy icon for the email)."
+  ]
+}
