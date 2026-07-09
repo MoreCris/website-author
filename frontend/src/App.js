@@ -7,6 +7,7 @@ import Home from "@/pages/Home";
 import Books from "@/pages/Books";
 import Series from "@/pages/Series";
 import Contos from "@/pages/Contos";
+import Story from "@/pages/Story";
 import Contact from "@/pages/Contact";
 
 const ScrollToTop = () => {
@@ -29,6 +30,7 @@ function App() {
             <Route path="/livros" element={<Books />} />
             <Route path="/livros/:slug" element={<Series />} />
             <Route path="/contos" element={<Contos />} />
+            <Route path="/contos/:slug" element={<Story />} />
             <Route path="/contato" element={<Contact />} />
           </Routes>
         </main>

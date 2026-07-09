@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { HOME } from '@/constants/testIds';
-import { series, totalBooks } from '@/data/books';
+import { series, totalBooks, AUTHOR_PHOTO, AUTHOR_QUOTE } from '@/data/books';
 
 const Home = () => {
   return (
@@ -9,7 +9,6 @@ const Home = () => {
       {/* HERO */}
       <section data-testid={HOME.hero} className="max-w-7xl mx-auto px-6 md:px-12 pt-16 md:pt-24 pb-20 md:pb-32">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          {/* Left — Typography */}
           <div className="lg:col-span-7 fade-in">
             <p className="overline mb-6">Escritor & Romancista — Desde 2008</p>
             <h1
@@ -47,20 +46,14 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Right — Author placeholder */}
           <div className="lg:col-span-5 fade-in-delayed">
-            <div className="relative aspect-[3/4] bg-cream border border-stone-300 flex items-center justify-center p-8 shadow-[inset_0_0_60px_rgba(0,0,0,0.03)]">
-              <div className="absolute inset-4 border border-stone-300/60 pointer-events-none" />
-              <div className="text-center">
-                <p className="overline mb-4">Retrato</p>
-                <p className="font-display italic text-2xl md:text-3xl text-stone-500 leading-snug">
-                  Fotografia do
-                  <br />
-                  autor
-                </p>
-                <div className="mt-6 h-px w-16 mx-auto bg-burgundy/60" />
-                <p className="mt-4 text-xs uppercase tracking-[0.25em] text-ash">Em breve</p>
-              </div>
+            <div className="relative aspect-[3/4] bg-cream border border-stone-300 overflow-hidden shadow-[0_30px_60px_-20px_rgba(0,0,0,0.15)]">
+              <img
+                src={AUTHOR_PHOTO}
+                alt="Cristiano Penido"
+                className="absolute inset-0 w-full h-full object-cover"
+                data-testid="home-author-photo"
+              />
             </div>
             <p className="mt-3 text-xs uppercase tracking-[0.25em] text-ash text-right">
               Brasília, Brasil
@@ -70,6 +63,16 @@ const Home = () => {
       </section>
 
       <div className="border-t border-stone-200" />
+
+      {/* CRITIC QUOTE */}
+      <section className="bg-cream border-y border-stone-200">
+        <div className="max-w-5xl mx-auto px-6 md:px-12 py-20 md:py-24 text-center">
+          <p className="overline mb-6">Sobre o autor</p>
+          <p className="font-display italic text-2xl md:text-3xl lg:text-4xl text-ink leading-snug">
+            “{AUTHOR_QUOTE}”
+          </p>
+        </div>
+      </section>
 
       {/* BIOGRAPHY */}
       <section
@@ -156,20 +159,20 @@ const Home = () => {
 
       <div className="border-t border-stone-200" />
 
-      {/* QUOTE / TEASER */}
       <section className="max-w-4xl mx-auto px-6 md:px-12 py-20 md:py-28 text-center">
         <p className="overline mb-6">Contos aclamados pela crítica</p>
         <p className="font-display italic text-3xl md:text-4xl text-ink leading-snug">
           “Cinco contos selecionados por editoras portuguesas —{' '}
           <span className="text-burgundy">Chiado Books</span> e{' '}
-          <span className="text-burgundy">Flamingo Edições</span> — em antologias literárias.”
+          <span className="text-burgundy">Flamingo Edições</span> — em antologias literárias,
+          agora disponíveis para leitura gratuita.”
         </p>
         <Link
           to="/contos"
           className="mt-10 inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-graphite hover:text-burgundy transition-colors duration-500 border-b border-stone-300 hover:border-burgundy pb-1"
           data-testid="home-cta-stories"
         >
-          Conhecer os contos
+          Ler os contos
           <ArrowUpRight size={14} />
         </Link>
       </section>
